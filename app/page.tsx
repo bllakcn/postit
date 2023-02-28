@@ -1,4 +1,5 @@
 "use client";
+import { PostType } from "./types/Posts";
 
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
@@ -12,7 +13,7 @@ const allPosts = async () => {
 };
 
 export default function Home() {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error } = useQuery<PostType[]>({
     queryKey: ["allPosts"],
     queryFn: allPosts,
   });
@@ -28,6 +29,7 @@ export default function Home() {
           postTitle={post.title}
           name={post.user.name}
           avatar={post.user.image}
+          id={post.id}
         />
       ))}
     </main>
