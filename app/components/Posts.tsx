@@ -20,9 +20,9 @@ export default function Post({ image, name, postTitle, id, comments }) {
       <div>
         <p className="break-all p-5">{postTitle}</p>
       </div>
-      <div className="flex gap-4 cursor-pointer items-center">
+      <div className="flex gap-4 items-center">
         <Link href={`/post/${id}`}>
-          <p className="text-sm font-bold text-gray-700">
+          <p className="text-sm font-bold text-gray-700 hover:text-gray-600">
             {comments?.length} Comments
           </p>
         </Link>
