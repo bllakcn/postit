@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { AuthPosts } from "../types/AuthPosts";
+import EditPost from "./EditPost";
 
 const fetchAuthPosts = async () => {
   const response = await axios.get("/api/posts/authPost");
@@ -15,10 +16,18 @@ export default function MyPosts() {
     queryKey: ["auth-posts"],
   });
   if (isLoading) return <h2>Posts are loading...</h2>;
-  console.log(data);
   return (
     <div>
-      <h1></h1>
+      {data?.posts?.map((post) => (
+        <EditPost
+          key={post.id}
+          id={post.id}
+          title={post.title}
+          avatar={data.image}
+          name={data.name}
+          comments={post.comments}
+        />
+      ))}
     </div>
   );
 }
