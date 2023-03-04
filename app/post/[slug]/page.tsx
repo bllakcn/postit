@@ -2,7 +2,7 @@
 
 import AddComment from "@/app/components/AddComment";
 import Post from "@/app/components/Posts";
-import { PostType } from "@/app/types/Posts";
+import { PostType } from "@/app/types/Models";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
@@ -23,9 +23,6 @@ export default function PostDetail(url: URL) {
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(url.params.slug),
   });
-  // if (isLoading) return <div>Loading...</div>;
-  console.log(data);
-
   return (
     <>
       {data?.map((post) => (

@@ -1,5 +1,5 @@
 "use client";
-import { PostType } from "./types/Posts";
+import { PostType } from "./types/Models";
 
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";

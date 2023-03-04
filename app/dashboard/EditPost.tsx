@@ -1,23 +1,12 @@
 "use client";
+import { EditPost } from "../types/Models";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
 import toast from "react-hot-toast";
 import Toggle from "./Toggle";
-
-type EditPostProps = {
-  id: string;
-  avatar: string;
-  name: string;
-  title: string;
-  comments?: {
-    id: string;
-    posterId: string;
-    userId: string;
-  }[];
-};
 
 export default function EditPost({
   avatar,
@@ -25,7 +14,7 @@ export default function EditPost({
   title,
   comments,
   id,
-}: EditPostProps) {
+}: EditPost) {
   const [toggle, setToggle] = useState(false);
   const queryClient = useQueryClient();
   let deleteToastId: string;
