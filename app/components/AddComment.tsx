@@ -30,6 +30,7 @@ export default function AddComment({ id }: { id: string }) {
     onSuccess: (data) => {
       setTitle("");
       setDisabled(false);
+      queryClient.invalidateQueries(["detail-post"]);
       toast.success("Comment added", { id: commentToastId });
     },
   });

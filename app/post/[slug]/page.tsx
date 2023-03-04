@@ -5,6 +5,7 @@ import Post from "@/app/components/Posts";
 import { PostType } from "@/app/types/Posts";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import Image from "next/image";
 
 type URL = {
   params: {
@@ -26,11 +27,10 @@ export default function PostDetail(url: URL) {
   console.log(data);
 
   return (
-    <div>
+    <>
       {data?.map((post) => (
-        <>
+        <div key={post.id}>
           <Post
-            key={post.id}
             id={post.id}
             postTitle={post.title}
             image={post.user.image}
@@ -38,8 +38,24 @@ export default function PostDetail(url: URL) {
             comments={post.comments}
           />
           <AddComment id={post.id} />
-        </>
+          {post?.comments?.map((comment) => (
+            <div key={comment.id} className="my-6 bg-white p-8 rounded-lg">
+              <div className="flex items-center gap-2">
+                <Image
+                  width={24}
+                  height={24}
+                  src={comment.user?.image}
+                  alt="avatar"
+                  className="rounded-full"
+                />
+                <h3 className="font-bold">{comment?.user?.name}</h3>
+                <h4 className="text-sm">{comment?.createdAt}</h4>
+              </div>
+              <p>{comment.message}</p>
+            </div>
+          ))}
+        </div>
       ))}
-    </div>
+    </>
   );
 }

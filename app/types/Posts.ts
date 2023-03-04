@@ -8,8 +8,14 @@ export type PostType = {
   };
   comments?: {
     id: string;
+    message: string;
     createdAt: string;
     postId: string;
     userId: string;
+    user?: {
+      name: string;
+      image: string;
+      id: string;
+    };
   }[];
 };
