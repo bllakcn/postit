@@ -28,7 +28,7 @@ export type AuthPosts = {
   posts: PostType[];
 };
 
-export type EditPost = {
+export type EditPostProps = {
   avatar: string;
   name: string;
   title: string;

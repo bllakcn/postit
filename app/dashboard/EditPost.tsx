@@ -1,5 +1,5 @@
 "use client";
-import { EditPost } from "../types/Models";
+import { EditPostProps } from "../types/Models";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
@@ -14,7 +14,7 @@ export default function EditPost({
   title,
   comments,
   id,
-}: EditPost) {
+}: EditPostProps) {
   const [toggle, setToggle] = useState(false);
   const queryClient = useQueryClient();
   let deleteToastId: string;
