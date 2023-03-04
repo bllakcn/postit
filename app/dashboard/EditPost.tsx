@@ -37,6 +37,11 @@ export default function EditPost({
     mutate(id);
   };
 
+  const toggleProps = {
+    deletePost,
+    setToggle,
+  };
+
   return (
     <>
       <div className="bg-white my-8 p-8 rounded-lg">
@@ -65,7 +70,7 @@ export default function EditPost({
           </button>
         </div>
       </div>
-      {toggle && <Toggle deletePost={deletePost} setToggle={setToggle} />}
+      {toggle && <Toggle functions={toggleProps} />}
     </>
   );
 }
