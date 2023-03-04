@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { Comment } from "@prisma/client";
 
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
@@ -16,7 +17,7 @@ export default async function handler(
     //Get user
     const prismaUser = await prisma.user.findUnique({
       where: {
-        email: session.user.email,
+        email: session.user?.email || undefined,
       },
     });
     //Add a comment to a post
@@ -30,7 +31,7 @@ export default async function handler(
           message: title,
           userId: prismaUser?.id,
           postId,
-        },
+        } as Comment,
       });
       res.status(200).json(result);
     } catch (err) {

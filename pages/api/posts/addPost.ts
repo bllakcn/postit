@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { Post } from "@prisma/client";
 
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
@@ -36,8 +37,8 @@ export default async function handler(
       const result = await prisma.post.create({
         data: {
           title,
-          userId: prismaUser.id,
-        },
+          userId: prismaUser?.id,
+        } as Post,
       });
       res.status(200).json(result);
     } catch (err) {

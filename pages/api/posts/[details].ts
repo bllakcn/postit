@@ -9,7 +9,7 @@ export default async function handler(
     try {
       const data = await prisma.post.findMany({
         where: {
-          id: req.query.details,
+          id: req.query.details as string,
         },
         include: {
           user: true,
