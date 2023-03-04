@@ -41,7 +41,7 @@ export default function PostDetail(url: URL) {
                 <Image
                   width={24}
                   height={24}
-                  src={comment.user?.image}
+                  src={comment.user?.image || "@/public/avatar.png"}
                   alt="avatar"
                   className="rounded-full"
                 />

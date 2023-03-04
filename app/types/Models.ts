@@ -35,3 +35,11 @@ export type EditPost = {
   comments: Comment[];
   id: string;
 };
+
+export type Posts = {
+  image: string;
+  name: string;
+  postTitle: string;
+  id: string;
+  comments: Comment[];
+};

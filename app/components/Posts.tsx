@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-// import { PostType } from "../types/Posts";
+import { Posts } from "../types/Models";
 
-export default function Post({ image, name, postTitle, id, comments }) {
+export default function Post({ image, name, postTitle, id, comments }: Posts) {
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
       <div className="flex items-center gap-2">
