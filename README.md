@@ -1,9 +1,11 @@
+<div align='center'>
 # Simple Full-Stack Post-It App
 
 ### Post & Comment on posts
 
 #### [Try it here!](https://postit-jet.vercel.app/)
 
+</div>
 <details><summary>Create Next.js App</summary>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
