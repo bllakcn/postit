@@ -1,0 +1,27 @@
+.css-bg {
+  --theme-color: rgb(79, 70, 228, 0.05);
+  background: linear-gradient(
+      0deg,
+      transparent 45%,
+      var(--theme-color) 45%,
+      var(--theme-color) 55%,
+      transparent 55%,
+      transparent 20%,
+      var(--theme-color) 20%,
+      var(--theme-color) 30%,
+      transparent 30%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 45%,
+      var(--theme-color) 45%,
+      var(--theme-color) 55%,
+      transparent 55%,
+      transparent 20%,
+      var(--theme-color) 20%,
+      var(--theme-color) 30%,
+      transparent 30%
+    );
+  background-size: 1em 1em;
+  background-color: #ffffff;
+}
