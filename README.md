@@ -4,8 +4,6 @@
 
 ### Post & Comment on posts
 
-#### [Try it here!](https://postit-jet.vercel.app/)
-
 </div>
 <details><summary>Create Next.js App</summary>
 
